@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+/* gold-nouveau theme */
+@font-face {
+	font-family: 'Quicksand';
+	src: url('/fonts/Quicksand.ttf');
+	font-display: swap;
+}
+
+/* if you want pagination limit change comment this out */
+.paginator-label {
+	display: none;
+}
+
+:root {
+	body {
+		background: #F4F4F4 !important;
+	}
+}

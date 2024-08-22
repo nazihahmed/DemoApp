@@ -1,0 +1,24 @@
+[
+    {
+        "username": "jeffb",
+        "password": "123456",
+        "name": "Jeff Bezos",
+        "wishlist": [
+            "65c4c19cde518bc387f102c0",
+            "65c4c19c1506a019ff1aa7e0",
+            "65c4c19c55b430d8019d9fac",
+            "65c4c19c5f5ddbef1f6d27fb"
+        ]
+    },
+    {
+        "username": "billg",
+        "password": "abcdef",
+        "name": "Bill Gates",
+        "wishlist": [
+            "65c4c19c176304fe76c71868",
+            "65c4c19c30c36af79e9bde70",
+            "65c4c19cd489a6b136540566",
+            "65c4c19cb116004095411baa"
+        ]
+    }
+]
