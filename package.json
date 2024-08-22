@@ -29,6 +29,6 @@
   },
   "type": "module",
   "dependencies": {
-    "jsonwebtoken": "^9.0.2"
+    "@tsndr/cloudflare-worker-jwt": "^2.5.3"
   }
 }

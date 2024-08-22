@@ -1,6 +1,6 @@
 import { getProductsForPage } from '../lib/productUtils.js';
 import users from '$lib/data/users.json';
-import jwt from 'jsonwebtoken';
+import jwt from '@tsndr/cloudflare-worker-jwt';
 import { fail, redirect } from '@sveltejs/kit';
 
 // TODO: Move this to a more secure location
@@ -11,7 +11,10 @@ export const load = async ({ url, cookies }) => {
 	let profile = null;
 	if (token) {
 		try {
-			profile = jwt.verify(token, SECRET_KEY);
+			const isValid = await jwt.verify(token, SECRET_KEY);
+			if(isValid) {
+				profile = jwt.decode(token).payload;
+			}
 		} catch (err) {
 			console.error('Invalid token', err);
 		}
@@ -50,9 +53,15 @@ export const actions = {
 		const { name, wishlist } = user;
 
 		// Generate a JWT
-		const token = jwt.sign({ username: user.username, name, wishlist }, SECRET_KEY, {
-			expiresIn: '1d'
-		});
+		const token = await jwt.sign(
+			{
+				username: user.username,
+				name,
+				wishlist,
+				exp: Math.floor(Date.now() / 1000) + 24 * (60 * 60) // now + 24 hours
+			},
+			SECRET_KEY
+		);
 
 		// Set the JWT as a cookie
 		cookies.set('session', token, {
