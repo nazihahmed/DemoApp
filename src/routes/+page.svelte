@@ -31,22 +31,22 @@
 	}
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center mb-5">
-	<div class="space-y-10 text-center flex flex-col items-center">
+<div class="container h-full mx-auto flex justify-center pb-10 px-4">
+	<div class="flex flex-col gap-6">
 		{#if data.profile}
-			<input
-				type="checkbox"
-				id="wishlist"
-				name="wishlist"
-				bind:checked={wishlistOnly}
-				on:change={updateWishlist}
-			/>
-			<label for="wishlist">Show only products from wishlist</label>
+			<label class="flex items-center space-x-2">
+				<input
+					type="checkbox"
+					id="wishlist"
+					name="wishlist"
+					class="checkbox"
+					bind:checked={wishlistOnly}
+					on:change={updateWishlist}
+				/>
+				<p class="text-slate-600">Show only products from wishlist</p>
+			</label>
 		{/if}
 
 		<ProductList {products} {count} />
 	</div>
 </div>
-
-<style lang="postcss">
-</style>

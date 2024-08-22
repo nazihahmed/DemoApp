@@ -23,7 +23,8 @@ export const load = async ({ url, cookies }) => {
 	const { products, count } = getProductsForPage(
 		currentPage,
 		currentLimit,
-		showWishlistOnly ? profile?.wishlist : null
+		profile?.wishlist,
+		showWishlistOnly
 	);
 
 	return {

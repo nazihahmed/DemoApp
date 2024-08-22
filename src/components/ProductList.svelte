@@ -42,29 +42,28 @@
 	}
 
 	function onAmountChange(e) {
-        // reset the current page as we don't guarantee it exists with the new limit
+		// reset the current page as we don't guarantee it exists with the new limit
 		setCurrentPageParams(1, e.detail.toString());
 	}
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
 	{#each products as product}
 		<ProductItem {product} />
 	{/each}
 </div>
-
+ 
 <div class="w-full">
 	<Paginator
 		bind:settings={pageSettings}
 		on:page={onPageChange}
 		on:amount={onAmountChange}
 		controlVariant=""
-        controlSeparator="display-none"
 		showNumerals
 		showPreviousNextButtons={false}
 		maxNumerals={2}
 		justify="justify-center"
-        active="bg-slate-400 border-slate-400"
-        buttonClasses="!border !border-slate-400 !mx-1 rounded-xl !px-4 !py-2"
+		active="customPaginatorButton--active"
+		buttonClasses="customPaginatorButton"
 	/>
 </div>

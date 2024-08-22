@@ -6,11 +6,11 @@
 
 <!-- App Shell -->
 <AppShell>
-	<svelte:fragment slot="header">
+	<svelte:fragment slot="pageHeader">
 		<!-- App Bar -->
-		<AppBar>
+		<AppBar background="bg-none" spacing="mx-auto container py-7">
 			<svelte:fragment slot="lead">
-				<strong class="text-xl">PlanckMarket</strong>
+					<h4 class="text-2xl font-semibold text-black"><span class="hidden sm:inline">PlanckMarket</span><span class="sm:hidden">PM</span></h4>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<Login/>

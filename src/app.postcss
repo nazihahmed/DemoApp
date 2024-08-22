@@ -10,8 +10,8 @@ body {
 
 /* gold-nouveau theme */
 @font-face {
-	font-family: 'Quicksand';
-	src: url('/fonts/Quicksand.ttf');
+	font-family: 'OpenSans';
+	src: url('/fonts/OpenSans.ttf');
 	font-display: swap;
 }
 
@@ -20,8 +20,20 @@ body {
 	display: none;
 }
 
-:root {
-	body {
-		background: #F4F4F4 !important;
-	}
+body {
+	background: #f4f4f4;
+}
+
+button.customPaginatorButton {
+	color: #3f4142 !important;
+	border-radius: 12px !important;
+	border-color: rgba(63, 65, 66, 0.1);
+	border-width: 1px;
+	margin: 0 5px !important;
+	padding: 9px 15px;
+}
+
+button.customPaginatorButton--active {
+	background-color: white !important;
+	border-color: transparent;
 }
