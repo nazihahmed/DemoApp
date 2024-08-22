@@ -2,9 +2,12 @@
 
 Demo app with Login capabilities and list of shopping items
 
+> GO HERE TO TRY IT OUT ! [planck.deepweb.cloud](planck.deepweb.cloud)
+
 * Login is persisted with a secure cookie
 * Pagination and Filters are stored in query params
 * Logout clears the cookie and redirects to home page
+* app is adapted to work in cloudflare pages edge environment (V8)
 
 ## Developing
 
