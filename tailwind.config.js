@@ -14,13 +14,12 @@ export default {
 		extend: {}
 	},
 	plugins: [
+		require('@tailwindcss/line-clamp'),
 		forms,
 		typography,
 		skeleton({
 			themes: {
-				custom: [
-					planckTheme
-				]
+				custom: [planckTheme]
 			}
 		})
 	]

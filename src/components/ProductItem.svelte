@@ -11,7 +11,7 @@
 		<h2 class="text-lg text-black font-semibold">
 			{product.title}
 		</h2>
-		<p class="text-sm text-gray-500">
+		<p class="text-sm text-gray-500 line-clamp-3">
 			{product.description}
 		</p>
 	</div>
