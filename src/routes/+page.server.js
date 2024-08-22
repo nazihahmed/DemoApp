@@ -1,9 +1,10 @@
 import { getProductsForPage } from '../lib/productUtils.js';
 import users from '$lib/data/users.json';
 import jwt from 'jsonwebtoken';
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 
-const SECRET_KEY = 'planck-super-secret-base';
+// TODO: Move this to a more secure location
+const SECRET_KEY = '62tEHLKWt*W2fX%AriLF9F4z7auDDf';
 
 export const load = async ({ url, cookies }) => {
 	const token = cookies.get('session');
@@ -66,6 +67,7 @@ export const actions = {
 	logout: async ({ cookies }) => {
 		// Clear the session cookie
 		cookies.delete('session', { path: '/' });
-		return { success: true };
+
+		throw redirect(303, '/');
 	}
 };

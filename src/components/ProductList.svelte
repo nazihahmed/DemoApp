@@ -4,28 +4,30 @@
 	import { Paginator } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
 
+	// receive products and count from parent component
 	export let products = [];
 	export let count = 0;
-	// Each page should display 10 products and users should be able to to move between
-	// pages using pagination, the page number should be passed as a query parameter
 
 	$: currentPage = $page?.url.searchParams.get('page')
 		? Number.parseInt($page.url.searchParams.get('page')) - 1
 		: 0;
+
 	$: limit = $page?.url.searchParams.get('limit')
 		? Number.parseInt($page.url.searchParams.get('limit'))
 		: 10;
 
+	// Variable to hold pagination settings
 	let pageSettings;
 
+	// Reactive statement to update page settings whenever currentPage, limit, or count changes
 	$: {
 		pageSettings = {
 			page: currentPage,
 			limit: limit,
 			size: count,
-			amounts: [5, 10]
+			amounts: [10] // Options for items per page
 		};
-		pageSettings = pageSettings;
+		pageSettings = pageSettings; // Ensuring reactivity
 	}
 
 	function setCurrentPageParams(pageNumber, limit) {
@@ -52,7 +54,7 @@
 		<ProductItem {product} />
 	{/each}
 </div>
- 
+
 <div class="w-full">
 	<Paginator
 		bind:settings={pageSettings}

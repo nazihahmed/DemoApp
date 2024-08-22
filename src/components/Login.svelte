@@ -8,7 +8,7 @@
 <form method="POST" use:enhance action="?/login">
 	<div class="flex gap-3 items-center">
 		{#if userProfile}
-			<p class="text-md hidden sm:block">Hello {userProfile.name}</p>
+			<p class="text-md">Hello {userProfile.name}</p>
 			<button class="btn variant-filled-primary" formaction="?/logout">Logout</button>
 		{:else}
 			<input

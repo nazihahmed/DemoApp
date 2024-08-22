@@ -1,9 +1,14 @@
 # Planck Full-Stack app
 
-Demo app with Login capabilities and list of items
+Demo app with Login capabilities and list of shopping items
+
+* Login is persisted with a secure cookie
+* Pagination and Filters are stored in query params
+* Logout clears the cookie and redirects to home page
 
 ## Developing
 
+> It is required to install node.js on the machine to run the app
 Once you've installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
