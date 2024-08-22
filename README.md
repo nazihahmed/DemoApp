@@ -2,7 +2,7 @@
 
 Demo app with Login capabilities and list of shopping items
 
-> GO HERE TO TRY IT OUT ! [planck.deepweb.cloud](planck.deepweb.cloud)
+> GO HERE TO TRY IT OUT ! [planck.deepweb.cloud](https://planck.deepweb.cloud)
 
 * Login is persisted with a secure cookie
 * Pagination and Filters are stored in query params
